@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Sceut 香水介紹頁</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf7;
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #4a4a4a;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #b07667;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    a {
+      color: #b07667;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* LOGO區 */
+    .logo-section {
+      text-align: center;
+    }
+
+    .logo-section img {
+      max-width: 160px;
+      margin-bottom: 15px;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-track img {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .carousel-buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .carousel-buttons button {
+      background-color: #f0e3dc;
+      color: #333;
+      border: none;
+      padding: 8px 14px;
+      margin: 0 6px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .carousel-buttons button:hover {
+      background-color: #e4d0c8;
+    }
+
+    /* Instagram */
+    .insta {
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- LOGO 區塊 -->
+    <section class="section logo-section" id="logo">
+      <img src="S__7618679.jpg" alt="Sceut Logo">
+      <h2>Sceut</h2>
+      <p>香氣，從這裡開始。</p>
+    </section>
+
+    <!-- 香水照片展示區 -->
+    <section class="section" id="gallery">
+      <h2>香水照片展示區</h2>
+      <div class="carousel">
+        <div class="carousel-track" id="carouselTrack">
+          <img src="S__24936451.jpg" alt="香水1">
+            <img src="Perfume2 (1).jpg" alt="香水2">
+      
+        </div>
+
+    </section>
+
+    
+
+    <!-- 香水介紹 -->
+    <section class="section" id="fragrance">
+      <h2>香水介紹</h2>
+      <ul>
+        <li><strong>Top Notes:</strong>佛手柑 、蘋果</li>
+        <li><strong>Middle Notes:</strong> 百合 、茉莉 、紫羅蘭 </li>
+        <li><strong>Base Notes:</strong> 皂香、白橡木 </li>
+      </ul>
+      <p>放眼望去，一片透明清澈的淺海。
+ 通往海上的交通方式，只有一條細長的木棧橋。
+感受著溫暖的海風，
+ 慢慢地走向那座海上別墅。
+讓心跳與海浪同步。
+那是一個能夠包覆一切，
+ 卻只讓你察覺真正重要之物的空間。
+ 屬於自己、絕對純粹的私密世界。
+</p>
+    </section>
+
+    <!-- 品牌介紹 -->
+    <section class="section" id="brand">
+      <h2>品牌介紹</h2>
+      <p>SE:CRUNO (セクルノ) 是一個以「奢華飯店體驗」與「心的旅行」為靈感的日系新興香氛品牌。品牌名稱隱含有「Secret」（祕密）與「Cruise」（航行）的意象，希望透過香味引領使用者逃離繁忙的城市節奏。SE:CRUNO 的設計美學極具現代感，常結合世界各地的度假地影像。以極具「飯店備品感」的高級調香為特色，旨在用平易近人的價格提供不輸給沙龍香水的優雅體驗，讓使用者即使在日常生活中，也能隨時找回在頂級飯店渡假時的從容與自由。</p>
+    </section>
+
+    <!-- IG 區塊 -->
+    <section class="section" id="social">
+      <h2>追蹤我們</h2>
+      <p class="insta">Follow us on Instagram: <a href="https://www.instagram.com/sceut_tw" target="_blank">@sceut_tw</a></p>
+    </section>
+
+    <!-- 回饋表單 -->
+    <section class="section" id="feedback">
+      <h2>回饋我們</h2>
+      <p>若您有任何建議或心得，歡迎至訂單系統中回饋，讓 Sceut 更加貼近您的感受。</p>
+    </section>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    function moveSlide(step) {
+      const track = document.getElementById('carouselTrack');
+      const totalSlides = track.children.length;
+      currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  </script>
+</body>
+</html>
+
+
+  </script>
+</body>
+</html>
